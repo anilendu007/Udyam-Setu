@@ -1,0 +1,18 @@
+const pages = ["overview","business","collective","procurement","passport"];
+const names = {overview:"Overview",business:"My Business",collective:"Collective Orders",procurement:"Group Procurement",passport:"Identity Passport"};
+function showPage(name){pages.forEach(p=>document.getElementById("page-"+p).classList.toggle("active",p===name));document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===name));document.getElementById("crumb").textContent=names[name];window.scrollTo({top:0,behavior:"smooth"});}
+document.querySelectorAll(".nav-item").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.goto)));
+const toast=document.getElementById("toast");let toastTimer;
+function notify(message){toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2800);}
+const dialog=document.getElementById("actionDialog"), title=document.getElementById("modalTitle"), body=document.getElementById("modalBody"), form=document.getElementById("actionForm");
+const templates={
+"new-order":{title:"Add a business order",fields:[["Customer name","text","e.g. Meera Public School"],["Order details","text","e.g. 12 school shirts"],["Amount (₹)","number","3600"]]},
+"create-opportunity":{title:"Post a collective opportunity",fields:[["Opportunity title","text","e.g. School uniform production"],["Total quantity","number","590"],["Deadline","date",""]]},
+"request-quote":{title:"Request a supplier quotation",fields:[["Material needed","text","e.g. Poly-cotton fabric"],["Combined quantity","text","e.g. 354 metres"],["Delivery area","text","Faridabad"]]}
+};
+function openModal(key){const t=templates[key];title.textContent=t.title;body.innerHTML=t.fields.map((f,i)=>`<label class="field"><span>${f[0]}</span><input ${f[1]==="date"?'type="date"':`type="${f[1]}"`} placeholder="${f[2]}" ${i===0?'required':''}></label>`).join("");document.getElementById("modalSubmit").textContent="Save demo entry";dialog.showModal();}
+document.querySelectorAll("[data-action]").forEach(b=>b.addEventListener("click",()=>{const a=b.dataset.action;if(templates[a])openModal(a);else if(a==="join")notify("You're on the interest list in this demo.");else if(a==="compare")notify("Quotation comparison opened — sample prices only.");else if(a==="share"){const selected=[...document.querySelectorAll(".share-option input:checked")].length;if(!selected){notify("Choose at least one item to share.");return;}notify("Your sample shareable summary is ready.");}else if(a==="download")downloadReport();}));
+form.addEventListener("submit",e=>{e.preventDefault();dialog.close();notify("Demo entry saved locally for this session.");});
+document.getElementById("orderSearch").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll("#ordersTable tbody tr").forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q)?"":"none");});
+function downloadReport(){const content=`UDYAM SETU — PROFESSIONAL IDENTITY PASSPORT\nDEMO / SAMPLE DATA\n\nName: Ravi Kumar\nProfession: Independent Tailor\nLocation: Faridabad, Haryana\nExperience: 6 years\nRecorded work records: 36\nCustomers: 28\nCollective projects: 2\nSkills: Uniform stitching, alterations, measurements\n\nNote: This is illustrative demo data, not a verified credential.`;const blob=new Blob([content],{type:"text/plain"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="udyam-setu-demo-passport.txt";a.click();URL.revokeObjectURL(a.href);notify("Sample passport report downloaded.");}

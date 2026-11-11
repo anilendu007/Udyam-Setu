@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173b35" />
+  <title>Udyam Setu — Grow Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">U</div><div><b>udyam setu</b><small>WORKER GROWTH PLATFORM</small></div></div>
+    <div class="workspace"><span class="avatar">RK</span><div><b>Ravi Kumar</b><small>Tailoring business</small></div><span class="chevron">⌄</span></div>
+    <p class="nav-label">WORKSPACE</p>
+    <nav>
+      <button class="nav-item active" data-page="overview"><span>▦</span> Overview</button>
+      <button class="nav-item" data-page="business"><span>▤</span> My Business</button>
+      <button class="nav-item" data-page="collective"><span>◎</span> Collective Orders <i>2</i></button>
+      <button class="nav-item" data-page="procurement"><span>⇄</span> Group Procurement</button>
+      <button class="nav-item" data-page="passport"><span>▧</span> Identity Passport</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-icon">?</div><div><b>Need a hand?</b><small>Visit the help centre</small></div></div>
+    <div class="sidebar-foot">A DEMO EXPERIENCE · SAMPLE DATA</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="crumb">Workspace <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><button class="icon-btn" aria-label="Notifications">♧<em></em></button><span class="top-avatar">RK</span></div></header>
+    <section class="page active" id="page-overview">
+      <div class="welcome"><div><p class="eyebrow">WEDNESDAY, 11 NOVEMBER 2026</p><h1>Your work. Your growth.</h1><p class="muted">Good evening, Ravi. Here's what's happening in your business.</p></div><button class="primary" data-action="new-order">＋ Add an order</button></div>
+      <div class="hero">
+        <div class="hero-copy"><span class="hero-tag">THE POWER OF WORKING TOGETHER</span><h2>Big opportunities.<br><span>Stronger together.</span></h2><p>Connect your skills with other independent businesses and take on work that would be difficult to do alone.</p><button class="light-btn" data-goto="collective">Explore collective orders <b>→</b></button></div>
+        <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="people">✂️　🧵　🪡</div><div class="hero-note"><b>5 local tailors</b><small>one shared opportunity</small></div></div>
+      </div>
+      <div class="section-head"><div><h3>Your business at a glance</h3><p class="muted">A simple view of your recent activity.</p></div><span class="period">This month⌄</span></div>
+      <div class="stats">
+        <article class="stat"><div class="stat-icon green">▤</div><span>Active orders</span><strong>12</strong><small class="positive">↑ 3 this month</small></article>
+        <article class="stat"><div class="stat-icon yellow">₹</div><span>Recorded sales</span><strong>₹48,500</strong><small class="positive">↑ 12% vs last month</small></article>
+        <article class="stat"><div class="stat-icon blue">◎</div><span>Collective projects</span><strong>2</strong><small>1 currently in progress</small></article>
+        <article class="stat"><div class="stat-icon purple">✓</div><span>Work history</span><strong>36</strong><small>Completed records</small></article>
+      </div>
+      <div class="content-grid">
+        <section class="panel"><div class="panel-head"><div><h3>Priority opportunity</h3><p class="muted">A collective order near you</p></div><span class="status open">OPEN</span></div><div class="opportunity"><div class="school-icon">🏫</div><div class="opp-main"><b>School uniform order</b><span>590 uniforms · Institutional buyer</span><small>Deadline: 28 November 2026</small></div><div class="opp-value"><b>₹1,77,000</b><small>Illustrative order value</small></div></div><div class="progress-label"><span>Team capacity committed</span><b>354 / 590 units</b></div><div class="progress"><i style="width:60%"></i></div><button class="text-btn" data-goto="collective">View opportunity →</button></section>
+        <section class="panel"><div class="panel-head"><div><h3>Recent activity</h3><p class="muted">Latest updates across your work</p></div><button class="dots">···</button></div><div class="activity"><span class="activity-dot green-dot"></span><div><b>Order marked completed</b><small>12 school shirts · Today, 3:20 PM</small></div></div><div class="activity"><span class="activity-dot blue-dot"></span><div><b>Collective invitation received</b><small>Uniform production group · Yesterday</small></div></div><div class="activity"><span class="activity-dot yellow-dot"></span><div><b>New supplier quotation</b><small>Sharma Fabrics · 2 days ago</small></div></div></section>
+      </div>
+      <p class="demo-note">Demo prototype: all names, orders, values and activity shown are illustrative sample data.</p>
+    </section>
+
+    <section class="page" id="page-business">
+      <div class="page-title"><div><p class="eyebrow">YOUR INDEPENDENT BUSINESS</p><h1>My Business</h1><p class="muted">Keep your customers, orders and records in one place.</p></div><button class="primary" data-action="new-order">＋ Add an order</button></div>
+      <div class="stats compact"><article class="stat"><span>Customers</span><strong>28</strong><small>5 repeat customers</small></article><article class="stat"><span>Open orders</span><strong>12</strong><small>Across 8 customers</small></article><article class="stat"><span>Recorded revenue</span><strong>₹48,500</strong><small>This month</small></article></div>
+      <section class="panel"><div class="panel-head"><div><h3>Recent orders</h3><p class="muted">Track your own customer work</p></div><input class="search" placeholder="Search orders..." id="orderSearch"></div><div class="table-wrap"><table id="ordersTable"><thead><tr><th>ORDER</th><th>CUSTOMER</th><th>DATE</th><th>AMOUNT</th><th>STATUS</th></tr></thead><tbody><tr><td><b>#US-1048</b><small>12 school shirts</small></td><td>Meera Public School</td><td>11 Nov 2026</td><td>₹3,600</td><td><span class="status complete">Completed</span></td></tr><tr><td><b>#US-1047</b><small>Alterations</small></td><td>Anita Sharma</td><td>10 Nov 2026</td><td>₹850</td><td><span class="status progress-status">In progress</span></td></tr><tr><td><b>#US-1046</b><small>Custom uniforms</small></td><td>Bright Future Academy</td><td>08 Nov 2026</td><td>₹8,400</td><td><span class="status open">Quoted</span></td></tr><tr><td><b>#US-1045</b><small>Blouse stitching</small></td><td>Sunita Devi</td><td>06 Nov 2026</td><td>₹1,200</td><td><span class="status complete">Completed</span></td></tr></tbody></table></div></section>
+      <p class="demo-note">Sample records only. This prototype does not process real payments or issue tax invoices.</p>
+    </section>
+
+    <section class="page" id="page-collective">
+      <div class="page-title"><div><p class="eyebrow">GROW BEYOND INDIVIDUAL CAPACITY</p><h1>Collective Orders</h1><p class="muted">Independent businesses. Shared opportunities. Fair contributions.</p></div><button class="primary" data-action="create-opportunity">＋ Post an opportunity</button></div>
+      <div class="feature-banner"><div><span class="hero-tag">FEATURED OPPORTUNITY</span><h2>590 school uniforms.<br>One collective effort.</h2><p>A local school needs a production partner. Join other tailors to fulfil the order together.</p><div class="banner-meta"><span>◷ Due 28 Nov 2026</span><span>♧ 5 worker slots</span><span>₹1,77,000 estimated total</span></div></div><div class="big-number">590<small>UNIFORMS</small></div></div>
+      <div class="section-head"><div><h3>How the work is shared</h3><p class="muted">Illustrative allocation based on equal capacity.</p></div><span class="status progress-status">IN PROGRESS</span></div>
+      <section class="panel"><div class="allocation-head"><div><b>Production allocation</b><small>Each worker can review their own agreed scope.</small></div><span class="allocation-total">354 / 590 allocated</span></div><div class="worker-list"><div class="worker"><span class="avatar">RK</span><div><b>Ravi Kumar <small class="you">YOU</small></b><small>Local tailor · 6 years experience</small></div><div class="worker-units"><b>118 units</b><small>20% of total</small></div><span class="status complete">Accepted</span></div><div class="worker"><span class="avatar peach">AS</span><div><b>Anita Sharma</b><small>Home tailoring · 4 years</small></div><div class="worker-units"><b>118 units</b><small>20% of total</small></div><span class="status complete">Accepted</span></div><div class="worker"><span class="avatar blue-bg">MK</span><div><b>Mohit Kumar</b><small>Tailoring workshop · 8 years</small></div><div class="worker-units"><b>118 units</b><small>20% of total</small></div><span class="status complete">Accepted</span></div><div class="worker"><span class="avatar muted-bg">+</span><div><b>2 more worker slots</b><small>236 units remaining to allocate</small></div><div class="worker-units"><b>236 units</b><small>40% remaining</small></div><button class="small-btn" data-action="join">Join group</button></div></div><div class="progress"><i style="width:60%"></i></div><div class="progress-foot"><span>60% of planned capacity allocated</span><span>Fair allocation is agreed by participants</span></div></section>
+      <div class="content-grid"><section class="panel"><h3>Project milestones</h3><div class="milestone"><span class="milestone-check">✓</span><div><b>Order received</b><small>11 November · Confirmed</small></div></div><div class="milestone"><span class="milestone-check">✓</span><div><b>Worker group formed</b><small>3 of 5 participants accepted</small></div></div><div class="milestone"><span class="milestone-pending">3</span><div><b>Fabric procurement</b><small>Awaiting final supplier selection</small></div></div><div class="milestone"><span class="milestone-pending">4</span><div><b>Production and quality check</b><small>Planned milestone</small></div></div></section><section class="panel"><h3>Contribution principles</h3><ul class="principles"><li>Work allocation is visible to participants.</li><li>Each worker agrees to their quantity and deadline.</li><li>Individual contributions are recorded separately.</li><li>Payment terms should be agreed before work begins.</li></ul></section></div>
+      <p class="demo-note">The 590-uniform scenario is a fictional demonstration, not a confirmed customer order or live opportunity.</p>
+    </section>
+
+    <section class="page" id="page-procurement">
+      <div class="page-title"><div><p class="eyebrow">BUY SMARTER, TOGETHER</p><h1>Group Procurement</h1><p class="muted">Combine material requirements and compare supplier quotations.</p></div><button class="primary" data-action="request-quote">＋ Request a quote</button></div>
+      <div class="procure-highlight"><div class="procure-icon">🧵</div><div><b>Uniform project · Fabric requirement</b><p>Three tailors have combined their estimated needs for the 590-uniform project.</p><strong>354 metres <small>combined estimated requirement</small></strong></div><span class="status open">QUOTES OPEN</span></div>
+      <section class="panel"><div class="panel-head"><div><h3>Supplier quotations</h3><p class="muted">Compare options before making an independent choice.</p></div></div><div class="supplier"><div class="supplier-logo">SF</div><div class="supplier-info"><b>Sharma Fabrics</b><small>Poly-cotton uniform fabric · Faridabad</small><span class="rating">★ 4.7 <small>Sample rating</small></span></div><div class="quote"><b>₹92 / metre</b><small>Illustrative quote</small></div><button class="outline-btn" data-action="compare">View quote</button></div><div class="supplier"><div class="supplier-logo blue-bg">MK</div><div class="supplier-info"><b>Metro Cloth House</b><small>Poly-cotton uniform fabric · Delhi NCR</small><span class="rating">★ 4.5 <small>Sample rating</small></span></div><div class="quote"><b>₹96 / metre</b><small>Illustrative quote</small></div><button class="outline-btn" data-action="compare">View quote</button></div><div class="supplier"><div class="supplier-logo peach">GF</div><div class="supplier-info"><b>Goyal Fabrics</b><small>Uniform fabric · Gurugram</small><span class="rating">★ 4.6 <small>Sample rating</small></span></div><div class="quote"><b>₹89 / metre</b><small>Illustrative quote</small></div><button class="outline-btn" data-action="compare">View quote</button></div></section>
+      <p class="demo-note">Supplier names, ratings and prices are fictional sample data. No real supplier quotations have been collected.</p>
+    </section>
+
+    <section class="page" id="page-passport">
+      <div class="page-title"><div><p class="eyebrow">YOUR WORK. YOUR RECORD.</p><h1>Professional Identity Passport</h1><p class="muted">A portable record of your skills, experience and professional activity.</p></div><button class="primary" data-action="download">↓ Download report</button></div>
+      <div class="passport-card"><div class="passport-top"><div class="passport-brand"><div class="brand-mark">U</div><b>UDYAM SETU</b></div><span class="passport-label">WORKER PROFILE · DEMO</span></div><div class="passport-person"><span class="passport-avatar">RK</span><div><h2>Ravi Kumar</h2><p>Independent Tailor · Faridabad, Haryana</p><span class="verified">✓ Profile information recorded</span></div></div><div class="passport-stats"><div><b>6 years</b><small>Experience</small></div><div><b>36</b><small>Work records</small></div><div><b>28</b><small>Customers</small></div><div><b>2</b><small>Collective projects</small></div></div><div class="passport-bottom"><span>Skills: Uniform stitching · Alterations · Measurements</span><span>Updated 11 Nov 2026</span></div></div>
+      <div class="content-grid"><section class="panel"><h3>Professional activity</h3><div class="activity"><span class="activity-dot green-dot"></span><div><b>School uniform order</b><small>118 units allocated · Collective project · In progress</small></div><span class="status progress-status">Ongoing</span></div><div class="activity"><span class="activity-dot blue-dot"></span><div><b>Custom shirt order</b><small>24 pieces · Customer-confirmed sample record</small></div><span class="status complete">Complete</span></div><div class="activity"><span class="activity-dot yellow-dot"></span><div><b>Alteration work</b><small>12 pieces · Self-recorded sample entry</small></div><span class="status complete">Complete</span></div></section><section class="panel"><h3>Your information, your choice</h3><p class="muted">Choose what to share when presenting your experience to a potential customer or participating institution.</p><label class="share-option"><input type="checkbox" checked> Skills and experience</label><label class="share-option"><input type="checkbox" checked> Confirmed work history</label><label class="share-option"><input type="checkbox"> Business transaction summary</label><button class="outline-btn full" data-action="share">Create shareable summary</button></section></div>
+      <p class="demo-note">This is a sample profile. Verification status must be based on real evidence and confirmation in a live product.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="actionDialog"><form method="dialog" id="actionForm"><div class="modal-head"><div><p class="eyebrow">UDYAM SETU</p><h3 id="modalTitle">Add an order</h3></div><button class="close" aria-label="Close">×</button></div><div id="modalBody"></div><div class="modal-actions"><button class="outline-btn" value="cancel">Cancel</button><button class="primary" id="modalSubmit" value="default">Save demo entry</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
